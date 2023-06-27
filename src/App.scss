@@ -1,7 +1,4 @@
-@import "./components/Header/Header.scss";
-@import "./components/Comp1/Comp1.scss";
-@import "./components/Comp2/Comp2.scss";
-@import "./components/Footer/Footer.scss";
+
 
 $buttonColor: #783c8f;
 $backgroundColor: #4caf50;
@@ -15,4 +12,11 @@ $mainTypo: "Arial";
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: $mainTypo;
 }
+
+
+@import "./components/Header/Header.scss";
+@import "./components/HomePage/HomePage.scss";
+@import "./components/Comp1/Comp1.scss";
+@import "./components/Footer/Footer.scss";
