@@ -9,7 +9,7 @@ import AddPhone from "./components/AddPhone/AddPhone.jsx";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Router>
         <Header />
         <Routes>
@@ -20,7 +20,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    </>
+    </div>
   );
 }
 
