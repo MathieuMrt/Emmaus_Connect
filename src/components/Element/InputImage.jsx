@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uploadIcon from "../../assets/icons/upload.png";
 
 function InputImage({ label }) {
   const [file, setFile] = useState(null);
@@ -9,7 +8,7 @@ function InputImage({ label }) {
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     const fileSizeInBytes = selectedFile.size;
-    const maxSizeInBytes = 1 * 1024 * 1024; // 5 MB
+    const maxSizeInBytes = 5 * 1024 * 1024; // 5 MB
 
     if (fileSizeInBytes > maxSizeInBytes) {
       setErrorMessage("Taille maximale dépassée (5 Mo)");
@@ -47,7 +46,7 @@ function InputImage({ label }) {
             {file ? (
               <img src={file} className="upload-file" alt="Uploaded Profile" />
             ) : (
-              <img src={uploadIcon} className="upload-icon" alt="Upload" />
+              <img src="" className="upload-icon" alt="Upload" />
             )}
             {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>

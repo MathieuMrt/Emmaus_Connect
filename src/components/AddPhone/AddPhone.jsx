@@ -1,8 +1,9 @@
 import React from "react";
 import InputList from "../Element/InputList";
 import InputText from "../Element/InputText";
+import InputImage from "../Element/InputImage";
 import WhiteButton from "../Element/WhiteButton";
-const handleValidation = () => {}
+const handleValidation = () => { }
 const AddPhone = () => {
   return (
     <div className="addPhone">
@@ -114,15 +115,20 @@ const AddPhone = () => {
             { value: "non", name: "non" },
           ]}
         />
+        <InputImage
+          label="Photo"
+        />
+
+
         <InputText
           label="Code IMEI"
           inputMessage="CODE IMEI" type="text"
         />
 
-        <WhiteButton 
-                    buttonName="Ajouter"
-                    buttonFunction={handleValidation}
-         />
+        <WhiteButton
+          buttonName="Ajouter"
+          buttonFunction={handleValidation}
+        />
 
       </div>
     </div>
