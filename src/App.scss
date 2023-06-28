@@ -16,7 +16,6 @@ $mainTypo: "Verdana";
   list-style: none;
   font-family: $mainTypo;
   background: $backgroundColor;
-  background-repeat: no-repeat;
 }
 
 @import "./components/Header/Header.scss";
