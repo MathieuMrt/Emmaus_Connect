@@ -42,6 +42,9 @@ export const calculateNote = (formData) => {
     case "16 Go":
       note += 200;
       break;
+    case "32 Go":
+      note += 300;
+      break;
     default:
       console.log("Quantité de RAM non valide.");
       break;
@@ -91,18 +94,19 @@ export const calculateNote = (formData) => {
 
   switch (etat) {
     case "Iréparable":
-      note *= -1;
+      note = 0;
       break;
     case "Réparable":
-      note *= -0.5;
+      note *= 0.5; 
       break;
     case "Bloqué":
-      note *= -0.1;
+      note *= 0.7; 
       break;
     case "Reconditionnable":
-      note *= -0.05;
+      note *= 0.9; 
       break;
     case "Reconditionné":
+      note *= 1.5;
       break;
     default:
       console.log("État non valide.");
@@ -119,26 +123,41 @@ export const calculateNote = (formData) => {
       console.log("Option de chargeur non valide.");
       break;
   }
-
+  if (note < 0) {
+    note = 0;
+  }
   return note;
+};
+
+export const getCategory = (note) => {
+  if (note >= 1075) {
+    return "5-Premium";
+  } else if (note >= 900) {
+    return "4-A";
+  } else if (note >= 600) {
+    return "3-B";
+  } else if (note >= 300) {
+    return "2-C";
+  } else {
+    return "1-HC";
+  }
 };
 
 const Calculatrice = ({ formData }) => {
   const note = calculateNote(formData);
+  const category = getCategory(note);
 
   console.log("Score du smartphone : " + note);
+  console.log("Catégorie du smartphone : " + category);
 
   return (
     <div>
       <h2>Résultat de la calculatrice</h2>
       <p>Score du smartphone : {note}</p>
-      {note > 0 ? (
-        <p>Le smartphone est de bonne qualité.</p>
-      ) : (
-        <p>Le smartphone n'est pas de bonne qualité.</p>
-      )}
+      <p>Catégorie du smartphone : {category}</p>
+
     </div>
   );
 };
 
-export default Calculatrice
+export default Calculatrice;
