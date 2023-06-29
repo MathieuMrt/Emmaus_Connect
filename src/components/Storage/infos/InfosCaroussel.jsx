@@ -1,9 +1,22 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 
 import image5 from "../../../Assets/image5.jpg";
 import image6 from "../../../Assets/image6.jpg";
 import image7 from "../../../Assets/image7.jpg";
 import image8 from "../../../Assets/image8.jpg";
+
+
+
+fetch('')
+  .then(response => response.json())
+  .then(data => {
+    // Faites quelque chose avec les données récupérées
+    console.log(data);
+  })
+  .catch(error => {
+    // Gérez les erreurs ici
+    console.error(error);
+  });
 
 const carouselData = [
   {
