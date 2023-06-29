@@ -5,13 +5,21 @@ require_once 'connection.php';
 
 $response = array();
 
-if (isset($_POST['login']) && isset($_POST['password'])) {
+if (isset($_POST['systeme']) && isset($_POST['marque']) && isset($_POST['modele']) && isset($_POST['ram']) && isset($_POST['stockage']) && isset($_POST['taille']) && isset($_POST['reseau']) && isset($_POST['etat']) && isset($_POST['chargeur']) && isset($_POST['imei'])) {
 
-    $login = $_POST['login'];
-    $password = $_POST['password'];
+    $systeme = $_POST['systeme'];
+    $marque = $_POST['marque'];
+    $modele = $_POST['modele'];
+    $ram = $_POST['ram'];
+    $stockage = $_POST['stockage'];
+    $taille = $_POST['taille'];
+    $reseau = $_POST['reseau'];
+    $etat = $_POST['etat'];
+    $chargeur = $_POST['chargeur'];
+    $imei = $_POST['imei'];
 
-    $query = $con->prepare("INSERT INTO user (login, password) VALUE (?, ?)");
-    $query->bind_param("ss", $login, $password);
+    $query = $con->prepare("INSERT INTO mobile (systeme_id, marque_id, modele, ram, stockage, taille_id, reseau_id, etat_id, chargeur, imei) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $query->bind_param("iisiiiiiis", $systeme, $marque, $modele, $ram, $stockage, $taille, $reseau, $etat, $chargeur, $imei);
 
     if ($query->execute()) {
         $response['error'] = false;
