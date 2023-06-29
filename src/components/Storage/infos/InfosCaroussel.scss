@@ -1,17 +1,44 @@
 .Cards{
-   
-    padding: 30%;
+
+    &_content {  
+        height: 20rem;
+        margin-top: 10px;
+        margin-left: 15%;
+        margin-right: 20%;
+        display: flex;
+        background-color: rgba(230, 36, 98, 0.768627451);
+        border-radius: 10%;
+        width: 50%;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column-reverse;
+        align-content: stretch;
+        flex-wrap: nowrap;
     
+        
+    }
+       
+      
+          
+        
+        
+
+
+    .Style_nom{
+        
+           
+             
+        }
+        
     
+    .Style_img{
+        height: 150px;
+        
+        
+       
+    
+    }
 }
 
 
 
-
-.Style_img{
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-}

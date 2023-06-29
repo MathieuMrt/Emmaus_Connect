@@ -2,14 +2,17 @@ import carousel from "./InfosCarousel";
 
 function InfosCaroussel() {
   return (
-    <div className="Cards">
-    {carousel.map((carousel) => (
+    <ul className="Cards">
+    {carousel.map((carousel, index) => (
   
-      <><p className="Style_nom"> {carousel.nom}</p><img src={carousel.img} className="Style_img"></img></>
+      <li key={index} className="Cards_content">
+        <p className="Style_nom"> {carousel.nom}</p>
+        <img src={carousel.img} className="Style_img" />
+      </li>
     ))}
       
     
-    </div>
+    </ul>
   );
 }
 
