@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { AiFillLock } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 
+
+
 const HomePage = () => {
   const navigate = useNavigate();
 
