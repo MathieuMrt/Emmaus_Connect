@@ -34,3 +34,4 @@ if (isset($_POST['systeme']) && isset($_POST['marque']) && isset($_POST['modele'
 }
 
 print_r($response);
+print_r($_POST);
