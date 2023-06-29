@@ -1,14 +1,16 @@
 .Cards{
 
+    
     &_content {  
-        height: 20rem;
+        
+        height: 15rem;
         margin-top: 10px;
-        margin-left: 15%;
-        margin-right: 20%;
+        margin-left: 35%;
+        margin-right: 35%;
         display: flex;
-        background-color: rgba(230, 36, 98, 0.768627451);
-        border-radius: 10%;
-        width: 50%;
+        background-color: rgba(82, 212, 221, 0.482);
+        border-radius: 4%;
+        width: 15rem;
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column-reverse;
