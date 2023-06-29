@@ -1,12 +1,12 @@
 .Cards {
-   
-    
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 
     &_content {
       height: 15rem;
       margin-top: 10px;
-      margin-left: 35%;
-      margin-right: 35%;
       display: flex;
       background-color: rgba(82, 212, 221, 0.482);
       border-radius: 4%;
