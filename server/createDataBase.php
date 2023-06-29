@@ -27,7 +27,7 @@ if ($con->query($createUserTableQuery) === TRUE) {
 // Création de la table "systeme"
 $createSystemeTableQuery = "CREATE TABLE IF NOT EXISTS systeme (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    systeme_name VARCHAR(50) NOT NULL
 )";
 if ($con->query($createSystemeTableQuery) === TRUE) {
     echo "La table 'systeme' a été créée avec succès.\n";
@@ -38,7 +38,7 @@ if ($con->query($createSystemeTableQuery) === TRUE) {
 // Création de la table "etat"
 $createEtatTableQuery = "CREATE TABLE IF NOT EXISTS etat (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    etat_name VARCHAR(50) NOT NULL
 )";
 if ($con->query($createEtatTableQuery) === TRUE) {
     echo "La table 'etat' a été créée avec succès.\n";
@@ -49,7 +49,7 @@ if ($con->query($createEtatTableQuery) === TRUE) {
 // Création de la table "marque"
 $createMarqueTableQuery = "CREATE TABLE IF NOT EXISTS marque (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    marque_name VARCHAR(50) NOT NULL
 )";
 if ($con->query($createMarqueTableQuery) === TRUE) {
     echo "La table 'marque' a été créée avec succès.\n";
@@ -61,7 +61,7 @@ if ($con->query($createMarqueTableQuery) === TRUE) {
 // Création de la table "taille"
 $createTailleTableQuery = "CREATE TABLE IF NOT EXISTS taille (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    taille_name VARCHAR(50) NOT NULL
 )";
 if ($con->query($createTailleTableQuery) === TRUE) {
     echo "La table 'taille' a été créée avec succès.\n";
@@ -72,7 +72,7 @@ if ($con->query($createTailleTableQuery) === TRUE) {
 // Création de la table "reseau"
 $createReseauTableQuery = "CREATE TABLE IF NOT EXISTS reseau (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    reseau_name VARCHAR(50) NOT NULL
 )";
 if ($con->query($createReseauTableQuery) === TRUE) {
     echo "La table 'reseau' a été créée avec succès.\n";
@@ -107,7 +107,7 @@ if ($con->query($createMobileTableQuery) === TRUE) {
 
 // Ajout des valeurs systeme
 
-$insertSystemeTableQuery = "INSERT INTO systeme (name) VALUES ('Android'), ('IOS')";
+$insertSystemeTableQuery = "INSERT INTO systeme (systeme_name) VALUES ('Android'), ('IOS')";
 if ($con->query($insertSystemeTableQuery) === TRUE) {
     echo "La table 'systeme' a été alimentée.\n";
 } else {
@@ -116,7 +116,7 @@ if ($con->query($insertSystemeTableQuery) === TRUE) {
 
 // Ajout des valeurs marque
 
-$insertMarqueTableQuery = "INSERT INTO marque (name) VALUES ('Samsung'), ('Apple'), ('LG'), ('Xiaomi'), ('Huawei'), ('Sony'), ('Honor'), ('Google')";
+$insertMarqueTableQuery = "INSERT INTO marque (marque_name) VALUES ('Samsung'), ('Apple'), ('LG'), ('Xiaomi'), ('Huawei'), ('Sony'), ('Honor'), ('Google')";
 if ($con->query($insertMarqueTableQuery) === TRUE) {
     echo "La table 'marque' a été alimentée.\n";
 } else {
@@ -125,7 +125,7 @@ if ($con->query($insertMarqueTableQuery) === TRUE) {
 
 // Ajout des valeurs taille
 
-$insertTailleTableQuery = "INSERT INTO taille (name) VALUES ('3.5'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9')";
+$insertTailleTableQuery = "INSERT INTO taille (taille_name) VALUES ('3.5'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9')";
 if ($con->query($insertTailleTableQuery) === TRUE) {
     echo "La table 'taille' a été alimentée.\n";
 } else {
@@ -134,7 +134,7 @@ if ($con->query($insertTailleTableQuery) === TRUE) {
 
 // Ajout des valeurs etat
 
-$insertEtatTableQuery = "INSERT INTO etat (name) VALUES ('Iréparable'), ('Réparable'), ('Bloqué'), ('Reconditionnable'), ('Reconditionné')";
+$insertEtatTableQuery = "INSERT INTO etat (etat_name) VALUES ('Iréparable'), ('Réparable'), ('Bloqué'), ('Reconditionnable'), ('Reconditionné')";
 if ($con->query($insertEtatTableQuery) === TRUE) {
     echo "La table 'etat' a été alimentée.\n";
 } else {
@@ -143,7 +143,7 @@ if ($con->query($insertEtatTableQuery) === TRUE) {
 
 // Ajout des valeurs reseau
 
-$insertReseauTableQuery = "INSERT INTO reseau (name) VALUES ('3G'), ('4G'), ('5G')";
+$insertReseauTableQuery = "INSERT INTO reseau (reseau_name) VALUES ('3G'), ('4G'), ('5G')";
 if ($con->query($insertReseauTableQuery) === TRUE) {
     echo "La table 'reseau' a été alimentée.\n";
 } else {

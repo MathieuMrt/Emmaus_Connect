@@ -4,21 +4,26 @@ header("Access-Control-Allow-Origin: *");
 require_once 'connection.php';
 
 $response = array();
-$query = $con->prepare("SELECT * FROM user");
+$query = $con->prepare("SELECT * FROM mobile
+INNER JOIN taille ON mobile.taille_id = taille.id
+INNER JOIN marque ON mobile.marque_id = marque.id
+INNER JOIN reseau ON mobile.reseau_id = reseau.id
+INNER JOIN systeme ON mobile.systeme_id = systeme.id
+INNER JOIN etat ON mobile.etat_id = etat.id;");
 $query->execute();
 
 if ($query->execute()) {
 
-    $user = array();
+    $mobile = array();
     $resultat = $query->get_result();
 
     while ($elmt = $resultat->fetch_array(MYSQLI_ASSOC)) {
 
-        $user[] = $elmt;
+        $mobile[] = $elmt;
     }
 
     $response['error'] = false;
-    $response['user'] = $user;
+    $response['mobile'] = $mobile;
     $response['message'] = "La commande a été executée avec succès";
     $query->close();
 } else {
