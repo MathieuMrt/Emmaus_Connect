@@ -1,11 +1,16 @@
 .addPhone {
-  min-height: 100vh;
+  .Box-whitout-header {
+    
+    display: flex;
+    justify-content: center;
+
+  }
+
+
 
   h1 {
     color: white;
     text-align: center;
   }
-  .Box-whitout-header {
-    padding: 4%;
-  }
+
 }

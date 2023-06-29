@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function WhiteButton({ buttonName, buttonFunction }) {
   return (
     <div className="WhiteButton">
-      <button type="button" onClick={buttonFunction}>
+      <button type="button" onSubmit={buttonFunction}>
         {buttonName}
       </button>
     </div>
@@ -13,11 +13,7 @@ function WhiteButton({ buttonName, buttonFunction }) {
 
 WhiteButton.propTypes = {
   buttonName: PropTypes.string.isRequired,
-  buttonFunction: PropTypes.string,
-};
-
-WhiteButton.defaultProps = {
-  buttonFunction: console.info("Fonction"),
+  buttonFunction: PropTypes.func,
 };
 
 export default WhiteButton;

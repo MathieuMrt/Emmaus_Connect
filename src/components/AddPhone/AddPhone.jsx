@@ -3,12 +3,20 @@ import InputList from "../Element/InputList";
 import InputText from "../Element/InputText";
 import InputImage from "../Element/InputImage";
 import WhiteButton from "../Element/WhiteButton";
-
+import Calculatrice from "../Element/calculatrice";
 
 
 
 
 function AddPhone() {
+
+  const [tumevoie, settumevoieplus] = useState(undefined);
+  const handleClick = () => {
+    return settumevoieplus(true);
+  };
+
+
+
   const [result, setResult] = useState("");
 
   const handleSubmit = async (e) => {
@@ -210,6 +218,7 @@ function AddPhone() {
             buttonName="Ajouter"
           // buttonFunction={handleValidation}
           />
+          <Calculatrice />
         </form>
       </div>
     </div>
