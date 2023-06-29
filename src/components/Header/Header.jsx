@@ -4,17 +4,34 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header">
-      <ul>
-        <li>
-          <NavLink to="/">Connexion</NavLink>
-        </li>
-        <li>
-          <NavLink to="storage">Stock</NavLink>
-        </li>
-        <li>
-          <NavLink to="addphone">Ajout</NavLink>
-        </li>
-      </ul>
+      <div className="header_container">
+        <ul>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "activeNavlinks" : "navlink"
+              }
+              to="storage"
+            >
+              Stock
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "activeNavlinks" : "navlink"
+              }
+              to="addphone"
+            >
+              Ajout
+            </NavLink>
+          </li>
+        </ul>
+
+        <NavLink className="navbutton" to="/">
+          <button>Déconnexion</button>
+        </NavLink>
+      </div>
     </div>
   );
 };
