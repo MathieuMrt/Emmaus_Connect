@@ -3,6 +3,10 @@ import InputList from "../Element/InputList";
 import InputText from "../Element/InputText";
 import InputImage from "../Element/InputImage";
 
+import WhiteButton from "../Element/WhiteButton";
+import Calculatrice from "../Element/calculatrice";
+
+
 function AddPhone() {
 
   const [formData, setFormData] = useState({
@@ -18,12 +22,18 @@ function AddPhone() {
     imei: ""
   })
 
-  const handleChange = (e) => {
-    setFormData((preiousValue) => ({
-      ...preiousValue, [e.target.name]: e.target.value
-    }))
-    console.log(formData);
+
+function AddPhone() {
+
+  const [tumevoie, settumevoieplus] = useState(undefined);
+  const handleClick = () => {
+    return settumevoieplus(true);
   };
+
+
+
+  const [result, setResult] = useState("");
+
 
   const handleSubmit = async (e) => {
   
@@ -202,7 +212,9 @@ function AddPhone() {
             type="submit"
             value="Ajouter"
           />
-          </div>
+
+          <Calculatrice />
+
         </form>
       </div>
     </div>
