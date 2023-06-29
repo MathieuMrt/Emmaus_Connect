@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InputList from "../Element/InputList";
-import Calculatrice, { calculateNote } from "../Element/Calculatrice";
+import Calculatrice, { calculateNote, getCategory } from "../Element/Calculatrice";
+import PopupResultat from "../Element/Popup";
 
 const Search = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const Search = () => {
     etat: "",
     chargeur: "",
   });
+  const [note, setNote] = useState(null);
+  const [category, setCategory] = useState(null);
 
   const handleChange = (e) => {
     setFormData((previousValue) => ({
@@ -21,12 +24,20 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const note = calculateNote(formData);
-    console.log("Note du smartphone : " + note);
-    alert("Note du smartphone : " + note);
+    const calculatedNote = calculateNote(formData);
+    const calculatedCategory = getCategory(calculatedNote);
+    setNote(calculatedNote);
+    setCategory(calculatedCategory);
   };
 
-  return (<div className="Search">
+  const closePopup = () => {
+    setNote(null);
+    setCategory(null);
+  };
+  console.log("coucou",note);
+
+  return (
+  <div className="Search">
     <form onSubmit={handleSubmit}className="input">
 
       <h1>Rechercher un prix</h1>
@@ -120,7 +131,11 @@ const Search = () => {
           <button type="submit">Calculer la note</button>
       </div>
     </form>
-  </div>
+    {note !== null && (
+  <PopupResultat note={note} category={category} onClose={closePopup} />
+  )}</div>
+  
+  
   );
 };
 
