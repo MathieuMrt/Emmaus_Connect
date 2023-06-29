@@ -1,8 +1,8 @@
 $buttonColor: #783c8f;
 $backgroundColor: linear-gradient(
   rgba(80, 172, 167, 1),
-  rgba(80, 172, 167, 0.4),
-  rgba(80, 172, 167, 0.1)
+  rgba(80, 172, 167, 0.9),
+  rgba(80, 172, 167, 0.4)
 );
 $fontColor: #ff5733;
 $mainTypo: "Verdana";
@@ -15,8 +15,10 @@ $mainTypo: "Verdana";
   text-decoration: none;
   list-style: none;
   font-family: $mainTypo;
+}
+
+.App {
   background: $backgroundColor;
-  background-repeat: no-repeat;
 }
 
 @import "./components/Header/Header.scss";
@@ -25,6 +27,13 @@ $mainTypo: "Verdana";
 @import "./components/Footer/Footer.scss";
 @import "./components/Storage/Storage.scss";
 @import "./components/AddPhone/AddPhone.scss";
+
 @import "./components/Storage/infos/InfosCaroussel.scss"
 
+
+
+@import "./components/Element/InputList";
+@import "./components/Element/InputText";
+@import "./components/Element/InputImage";
+@import "./components/Element/WhiteButton";
 
