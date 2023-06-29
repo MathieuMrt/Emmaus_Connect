@@ -57,16 +57,6 @@ if ($con->query($createMarqueTableQuery) === TRUE) {
     echo "Erreur lors de la création de la table 'marque' : " . $con->error;
 }
 
-// Création de la table "modele"
-$createModeleTableQuery = "CREATE TABLE IF NOT EXISTS modele (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
-)";
-if ($con->query($createModeleTableQuery) === TRUE) {
-    echo "La table 'modele' a été créée avec succès.\n";
-} else {
-    echo "Erreur lors de la création de la table 'modele' : " . $con->error;
-}
 
 // Création de la table "taille"
 $createTailleTableQuery = "CREATE TABLE IF NOT EXISTS taille (
@@ -95,14 +85,15 @@ $createMobileTableQuery = "CREATE TABLE IF NOT EXISTS mobile (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     marque_id INT(11) NOT NULL,
     FOREIGN KEY (marque_id) REFERENCES marque(id),
-    modele_id INT(11) NOT NULL,
-    FOREIGN KEY (modele_id) REFERENCES modele(id),
     taille_id INT(11) NOT NULL,
     FOREIGN KEY (taille_id) REFERENCES taille(id),
     reseau_id INT(11) NOT NULL,
     FOREIGN KEY (reseau_id) REFERENCES reseau(id),
     etat_id INT(11) NOT NULL,
     FOREIGN KEY (etat_id) REFERENCES etat(id),
+    systeme_id INT(11) NOT NULL,
+    FOREIGN KEY (systeme_id) REFERENCES systeme(id),
+    modele VARCHAR(50) NOT NULL,
     ram INT(3) NOT NULL,
     stockage INT(3) NOT NULL,
     chargeur TINYINT NOT NULL,
@@ -131,6 +122,34 @@ if ($con->query($insertMarqueTableQuery) === TRUE) {
 } else {
     echo "Erreur lors de la mise à jour de la table 'marque' : " . $con->error;
 }
+
+// Ajout des valeurs taille
+
+$insertTailleTableQuery = "INSERT INTO taille (name) VALUES ('3.5'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9')";
+if ($con->query($insertTailleTableQuery) === TRUE) {
+    echo "La table 'taille' a été alimentée.\n";
+} else {
+    echo "Erreur lors de la mise à jour de la table 'taille' : " . $con->error;
+}
+
+// Ajout des valeurs etat
+
+$insertEtatTableQuery = "INSERT INTO etat (name) VALUES ('Iréparable'), ('Réparable'), ('Bloqué'), ('Reconditionnable'), ('Reconditionné')";
+if ($con->query($insertEtatTableQuery) === TRUE) {
+    echo "La table 'etat' a été alimentée.\n";
+} else {
+    echo "Erreur lors de la mise à jour de la table 'etat' : " . $con->error;
+}
+
+// Ajout des valeurs reseau
+
+$insertReseauTableQuery = "INSERT INTO reseau (name) VALUES ('3G'), ('4G'), ('5G')";
+if ($con->query($insertReseauTableQuery) === TRUE) {
+    echo "La table 'reseau' a été alimentée.\n";
+} else {
+    echo "Erreur lors de la mise à jour de la table 'reseau' : " . $con->error;
+}
+
 
 
 // Fermeture de la connexion
