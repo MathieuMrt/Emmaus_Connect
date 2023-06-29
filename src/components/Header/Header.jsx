@@ -26,6 +26,16 @@ const Header = () => {
               Ajout
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "activeNavlinks" : "navlink"
+              }
+              to="recherche"
+            >
+              Recherche note
+            </NavLink>
+          </li>
         </ul>
 
         <NavLink className="navbutton" to="/">

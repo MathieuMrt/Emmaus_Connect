@@ -117,9 +117,7 @@ const Search = () => {
 
           ]}
         />
-        <div>
           <button type="submit">Calculer la note</button>
-        </div>
       </div>
     </form>
   </div>
