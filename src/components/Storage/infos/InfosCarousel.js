@@ -1,4 +1,4 @@
-import image5 from "../../../Assets/image5.jpg"
+/*import image5 from "../../../Assets/image5.jpg"
 import image6 from "../../../Assets/image6.jpg"
 import image7 from "../../../Assets/image7.jpg"
 import image8 from "../../../Assets/image8.jpg"
@@ -79,4 +79,4 @@ const carousel = [
 
 ]
 
-export default carousel;
+export default carousel;*/

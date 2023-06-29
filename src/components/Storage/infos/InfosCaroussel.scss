@@ -1,46 +1,45 @@
-.Cards{
+.Cards {
+   
+    
 
-    
-    &_content {  
-        
-        height: 15rem;
-        margin-top: 10px;
-        margin-left: 35%;
-        margin-right: 35%;
-        display: flex;
-        background-color: rgba(82, 212, 221, 0.482);
-        border-radius: 4%;
-        width: 15rem;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column-reverse;
-        align-content: stretch;
-        flex-wrap: nowrap;
-    
-        
+    &_content {
+      height: 15rem;
+      margin-top: 10px;
+      margin-left: 35%;
+      margin-right: 35%;
+      display: flex;
+      background-color: rgba(82, 212, 221, 0.482);
+      border-radius: 4%;
+      width: 15rem;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      align-content: stretch;
+      flex-wrap: nowrap;
+      position: relative; /* Ajout de la position relative */
     }
-       
-      
-          
-        
-        
-
-
-    .Style_nom{
-        
-           
-             
-        }
-        
-    
-    .Style_img{
-        height: 150px;
-        
-        
-       
-    
+  
+    .CrossButton {
+      position: absolute; /* Ajout de la position absolue */
+      top: 5px;
+      right: 5px;
+      font-size: 20px;
+      color: rgb(14, 13, 13);
+      cursor: pointer;
     }
-}
 
 
-
+    button{
+        background-color: rgba(255, 255, 255, 0.624);
+        padding: 3%;
+        border-radius: 45% 5% ;
+    }
+  }
+  
+  .Style_nom {
+  }
+  
+  .Style_img {
+    height: 150px;
+  }
+  
